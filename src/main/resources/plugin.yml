@@ -1,0 +1,35 @@
+name: SimpleSpawn
+version: ${project.version}
+description: ${project.description}
+
+author: Travis Watkins
+website: ${project.url}
+
+main: com.probablycoding.bukkit.simplespawn.SimpleSpawn
+
+commands:
+  spawn:
+    description: Teleports you to the spawn location
+    permission: simplespawn.spawn
+    usage: |
+           Incorrect usage of /<command>. Examples:
+           /<command> - Teleport to spawn
+           /<command> reload - Reloads configuration
+  setspawn:
+    description: Sets the spawn location
+    permission: simplespawn.setspawn
+    usage: |
+           Incorrect usage of /<command>. Examples:
+           /<command> - Sets spawn location
+
+permissions:
+  simplespawn:
+    description: Allow a player all spawn permissions
+    children:
+      simplespawn.spawn:
+        description: Allow a player to teleport to spawn
+      simplespawn.setspawn:
+        description: Allow a player to set the spawn location
+      simplespawn.reload:
+        description: Allow a player to reload configuration
+
